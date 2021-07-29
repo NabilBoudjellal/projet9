@@ -2,6 +2,15 @@
 
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
 
+## Before deploying this project in your org you had to :
+
+create in the object order:
+field name : NetAmount__c with data type Currency
+field nmae : ShipmentCost__c with data type Currency
+
+create in the object account:
+field name : Chiffre_d_affaire__c with data type Currency
+
 ## How Do You Plan to Deploy Your Changes?
 
 Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
