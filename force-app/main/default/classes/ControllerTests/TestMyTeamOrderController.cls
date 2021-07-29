@@ -2,7 +2,6 @@
 public with sharing class TestMyTeamOrderController {
     testmethod static void testController() {
         //Creating the required data.
-
         //each account has one order
         Integer numberOfAccounts = 2;
         Integer unitPrice = 1000;

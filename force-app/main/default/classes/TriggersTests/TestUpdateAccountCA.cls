@@ -9,6 +9,7 @@ public with sharing class TestUpdateAccountCA {
         TestDataFactory.accountGen(numberOfAccounts,unitPrice, numberOfitems);
 
         //Perform test
+        Test.startTest();
         List<OrderItem> ordersItems = [Select Quantity, TotalPrice from OrderItem];
         for(OrderItem oI: ordersItems){
             oI.Quantity = oI.Quantity +1;
@@ -20,6 +21,7 @@ public with sharing class TestUpdateAccountCA {
             o.Description = 'New Description';
         }
         update updateOrder;
+        Test.stopTest();
 
         // Verify 
         // In this case verify that the NetAmount__c is well updated     
@@ -28,11 +30,3 @@ public with sharing class TestUpdateAccountCA {
         System.AssertEquals( ((numberOfitems + 1 ) * unitPrice) , assAccountList[1].Chiffre_d_affaire__c);
     }
 }
-/**
- * ca que j'ai fait :
- * -- appel de la fonction test data factory pour la génération de deux couples comptes, commandes
- * -- ajout d'un commentaire pour expliquer le fonctionnement du trigger
- * -- modification de la structure du trigger pour ne pas faire de requette SOQL à l'interieur d'une boucle (best practice)
- * -- pour optimiser le code pour qu'il s'applique a plus d'un update si c'est le cas
- * -- la mise a jour de tous les chiffre d'affaire pour les comptes avec une commande de modifier
- */

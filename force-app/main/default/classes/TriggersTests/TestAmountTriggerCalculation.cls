@@ -5,7 +5,7 @@
 public with sharing class TestAmountTriggerCalculation {
     @isTest static void OrderTest(){
         //Test data setup
-		TestDataFactory.accountGen(2,4000, 7);
+		TestDataFactory.accountGen(2,4000,7);
 
         //Perform test
         Test.startTest();
@@ -24,9 +24,3 @@ public with sharing class TestAmountTriggerCalculation {
 		System.AssertEquals(AssertOrder[1].TotalAmount - AssertOrder[1].ShipmentCost__c , AssertOrder[1].NetAmount__c);
     }
 }
-/**
- * ce que j'ai fait :
- * appel de la fonction TestDataFactory pour la génération de deux couple comptes commandes
- * dans le test j'ajoute des frais de shipment a chaque commande
- * je vérifie que le total amount a bien été mis à jour pour les deux commandes
- */

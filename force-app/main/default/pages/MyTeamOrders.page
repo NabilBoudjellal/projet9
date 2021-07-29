@@ -1,3 +1,4 @@
+<!-- this VF page displays the total amount of Team Orders -->
 <apex:page controller="MyTeamOrdersController">
         <div>
         	<h1>
